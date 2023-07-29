@@ -17,7 +17,7 @@
             <div class="contact-fields">
                 <label for="contact">Contact</label>
                 <input type="text" name="contact" value="{{ old('contact') }}"  min="9" max="9">
-                @error('text')
+                @error('contact')
                     <p class="error-message">{{ $message }}</p>
                 @enderror
             </div>
