@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
+<x-app-layout title="Contact - Details">
     <h1>{{$contact->name}} - Details</h1>
     <a href="{{route('contacts.edit', $contact->id)}}">Editar</a>
     <div>
@@ -14,6 +6,4 @@
         E-mail: {{$contact->email}}
         Created at: {{$contact->created_at}}
     </div>
-    
-</body>
-</html>
+</x-app-layout>
