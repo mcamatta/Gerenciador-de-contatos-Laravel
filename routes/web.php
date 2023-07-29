@@ -4,10 +4,7 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
+Route::get('/', [ContactController::class, 'index']);
 Route::get('contacts', [ContactController::class, 'index'])
     ->name('contacts.index');
 Route::resource('contacts', ContactController::class)
