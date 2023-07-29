@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ContactRequest;
 use App\Models\Contact;
-use Illuminate\Http\Request;
 
 class ContactController extends Controller
 {
@@ -20,9 +20,9 @@ class ContactController extends Controller
         return view('contacts.create');
     }
 
-    public function store(Request $request)
+    public function store(ContactRequest $request)
     {
-        Contact::create($request->all());
+        Contact::create($request->validated());
         return redirect()->route('contacts.index');
     }
 
@@ -40,9 +40,9 @@ class ContactController extends Controller
             ->with('contact', $contact);
     }
 
-    public function update(Request $request, Contact $contact)
+    public function update(ContactRequest $request, Contact $contact)
     {
-        $contact->update($request->all());
+        $contact->update($request->validated());
         return redirect()->route('contacts.show', $contact->id);
     }
 
