@@ -1,5 +1,7 @@
 <x-app-layout>
-    <a href="{{route('contacts.create')}}">New</a>
+    <div class="btn-new">
+        <a href="{{route('contacts.create')}}">New</a>
+    </div>
     <table>
         <thead>
           <tr>
@@ -19,7 +21,7 @@
                         <form action="{{ route("contacts.destroy", $contact->id) }}" method="POST">
                             @csrf
                             @method('delete')
-                            <button type="submit">Delete</button>
+                            <button type="submit" class="btn-delete">Delete</button>
                         </form>
                     </td>
                 </tr>

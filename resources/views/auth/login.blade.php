@@ -1,19 +1,16 @@
-<form action="{{ route('login') }}" method="POST">
-    @csrf
-    @error('email')
-        {{ $message }}
-    @enderror
-    
-    <div class="flex flex-col">
-        <label for="email">Email</label>
-        <input type="email" name="email" placeholder="you@example.com">
+<x-app-layout title="Login">
+    <div class="login-page">
+        <div class="form">
+            <h1>Login</h1>
+            <form action="{{ route('login') }}" method="POST">
+                @csrf
+                <input type="email" name="email" value="{{ old('email') }}" placeholder="you@example.com">
+                <input name="password" type="password" placeholder="Password">
+                <button type="submit" class="btn-success">Log in</button>
+                @error('email')
+                    <p class="message">{{ $message }}</p>
+                @enderror
+            </form>
+        </div>
     </div>
-
-    <div class="flex flex-col mt-4">
-        <label for="password">Senha</label>
-        <input name="password" id="password" type="password">
-    </div>
-
-    <button type="submit">Log in</button>
-
-</form>
+</x-app-layout>
