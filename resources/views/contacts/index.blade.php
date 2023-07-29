@@ -1,4 +1,5 @@
 <x-app-layout>
+    <a href="{{route('contacts.create')}}">New</a>
     <table>
         <thead>
           <tr>
