@@ -7,11 +7,11 @@
         <a href="{{route('contacts.edit', $contact->id)}}" class= "btn-edit">Editar</a>
         <ul>
             <li>
-                <h2>Contact</h2>
+                <h3>Contact</h3>
                 <span>{{$contact->contact}}</span>
             </li>
             <li>
-                <h2>E-mail</h2>
+                <h3>E-mail</h3>
                 <span>{{$contact->email}}</span>
             </li>
         </ul>

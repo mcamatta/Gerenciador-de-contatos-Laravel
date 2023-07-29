@@ -1,5 +1,8 @@
 <x-app-layout title="Contact - Create">
-    <h1>New Contact</h1>
+    <div class="contact-title">
+        <h1>New Contact</h1>
+        <a href="{{ route('contacts.index') }}" class="btn-back">Back</a>
+    </div>
     <form action="{{route('contacts.store')}}" method="POST" class="contact-form">
         @csrf
         <div class="contact-content">
